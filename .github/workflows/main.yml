@@ -1,11 +1,11 @@
-name: manual-update
+name: Manual workflow
 
 on:
   workflow_dispatch:
     inputs:
       newVersion:
         description: 'New Version'
-        default: '1.8.1'
+        default: '1.0.2'
         required: true
 
 jobs:
@@ -14,9 +14,9 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Update Package.swift
       run: |
-        ./github/updateChecksum.sh ${{ github.event.inputs.newVersion }}
+        ./scripts/updateChecksum.sh ${{ github.event.inputs.newVersion }}
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
