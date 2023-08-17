@@ -1,0 +1,11 @@
+framework module UIKitHelper {
+  umbrella header "UIKitHelper.h"
+
+  export *
+  module * { export * }
+}
+
+module UIKitHelper.Swift {
+  header "UIKitHelper-Swift.h"
+  requires objc
+}

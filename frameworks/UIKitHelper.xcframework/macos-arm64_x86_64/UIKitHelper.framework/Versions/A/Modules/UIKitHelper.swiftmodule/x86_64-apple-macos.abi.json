@@ -1,0 +1,206 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "UIKitHelper",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Data",
+        "printedName": "Data",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "email",
+            "printedName": "email",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11UIKitHelper4DataC5emailSSvp",
+            "mangledName": "$s11UIKitHelper4DataC5emailSSvp",
+            "moduleName": "UIKitHelper",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11UIKitHelper4DataC5emailSSvg",
+                "mangledName": "$s11UIKitHelper4DataC5emailSSvg",
+                "moduleName": "UIKitHelper",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "password",
+            "printedName": "password",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11UIKitHelper4DataC8passwordSSvp",
+            "mangledName": "$s11UIKitHelper4DataC8passwordSSvp",
+            "moduleName": "UIKitHelper",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11UIKitHelper4DataC8passwordSSvg",
+                "mangledName": "$s11UIKitHelper4DataC8passwordSSvg",
+                "moduleName": "UIKitHelper",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(email:password:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "UIKitHelper.Data",
+                "usr": "s:11UIKitHelper4DataC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11UIKitHelper4DataC5email8passwordACSS_SStcfc",
+            "mangledName": "$s11UIKitHelper4DataC5email8passwordACSS_SStcfc",
+            "moduleName": "UIKitHelper",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "log",
+            "printedName": "log()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11UIKitHelper4DataC3logyyF",
+            "mangledName": "$s11UIKitHelper4DataC3logyyF",
+            "moduleName": "UIKitHelper",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:11UIKitHelper4DataC",
+        "mangledName": "$s11UIKitHelper4DataC",
+        "moduleName": "UIKitHelper",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/mansoor\/Downloads\/Framwork-space\/UIKitHelper\/UIKitHelper\/UILabel.swift",
+      "kind": "StringLiteral",
+      "offset": 718,
+      "length": 40,
+      "value": "\"email: \""
+    },
+    {
+      "filePath": "\/Users\/mansoor\/Downloads\/Framwork-space\/UIKitHelper\/UIKitHelper\/UILabel.swift",
+      "kind": "StringLiteral",
+      "offset": 734,
+      "length": 1,
+      "value": "\", password: \""
+    },
+    {
+      "filePath": "\/Users\/mansoor\/Downloads\/Framwork-space\/UIKitHelper\/UIKitHelper\/UILabel.swift",
+      "kind": "StringLiteral",
+      "offset": 757,
+      "length": 2,
+      "value": "\"\""
+    }
+  ]
+}
