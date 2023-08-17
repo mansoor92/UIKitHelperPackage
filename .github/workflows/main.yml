@@ -22,4 +22,4 @@ jobs:
       uses: peter-evans/create-pull-request@v3
       with:
         token: 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
-        
+        author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
