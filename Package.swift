@@ -6,7 +6,7 @@ import PackageDescription
 let version = "1.8.0"
 
 let package = Package(
-    name: "UIKitHelperPackage",
+    name: "Sample",
     platforms: [
         .iOS(.v16),
         .macOS(.v13)
@@ -14,8 +14,11 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "UIKitHelperPackage",
-            targets: ["SamplePackage","UIKitHelper"]),
+            name: "SampleProduct",
+            targets: ["UIKitHelper"]),
+        .library(
+            name: "EmpptyProduct",
+            targets: ["SamplePackage"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
