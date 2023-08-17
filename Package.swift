@@ -6,7 +6,7 @@ import PackageDescription
 let version = "1.8.0"
 
 let package = Package(
-    name: "Sample",
+    name: "Sample", // this name is displayed when package is added to xcode project in Project Navigator under Package Dependencies
     platforms: [
         .iOS(.v16),
         .macOS(.v13)
@@ -17,7 +17,7 @@ let package = Package(
             name: "SampleProduct",
             targets: ["UIKitHelper"]),
         .library(
-            name: "EmpptyProduct",
+            name: "EmptyProduct",
             targets: ["SamplePackage"]),
     ],
     dependencies: [
