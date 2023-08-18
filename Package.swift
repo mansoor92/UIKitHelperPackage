@@ -39,15 +39,15 @@ let package = Package(
         
         /*
             .binaryTarget(name: "CrashReporter", url: "https://eidinger.info/PLCrashReporterXCFrameworks/\(version)/CrashReporter.xcframework.zip",
-                                 checksum: "ad7084407730d37ee998d6e1dc2df087b614e0b21417af67fc3497747b8b7be3"),
+                                 checksum: "864112686f382cf0adca0a893cc6a2d7d0edaed71b14a0cc4dcfedf525919d87"),
         
             .binaryTarget(name: "UIKitHelper",
                           url: "https://github.com/mansoor92/UIKitHelper/blob/master/releases/1.0.0/UIKitHelper.xcframework.zip",
-                          checksum: "ad7084407730d37ee998d6e1dc2df087b614e0b21417af67fc3497747b8b7be3"),*/
+                          checksum: "864112686f382cf0adca0a893cc6a2d7d0edaed71b14a0cc4dcfedf525919d87"),*/
         /*
         .binaryTarget(name: "UIKitHelper",
                       url: "https://github.com/mansoor92/UIKitHelper/blob/master/UIKitHelper-2.xcframework.zip",
-                      checksum: "ad7084407730d37ee998d6e1dc2df087b614e0b21417af67fc3497747b8b7be3")*/
+                      checksum: "864112686f382cf0adca0a893cc6a2d7d0edaed71b14a0cc4dcfedf525919d87")*/
             .binaryTarget(name: "UIKitHelper", path: "frameworks/UIKitHelper.xcframework")
     ]
 )
@@ -68,7 +68,7 @@ let package = Package(
          .binaryTarget(
              name: "LibraryA",
              url: "https://url.to/LibraryA.xcframework.zip",
-             checksum: "ad7084407730d37ee998d6e1dc2df087b614e0b21417af67fc3497747b8b7be3"),
+             checksum: "864112686f382cf0adca0a893cc6a2d7d0edaed71b14a0cc4dcfedf525919d87"),
          .target(
              name: "PackageB",
              dependencies: [
