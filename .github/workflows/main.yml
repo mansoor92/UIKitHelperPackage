@@ -22,11 +22,17 @@ jobs:
     - name: Update Package.swift
       run: |
         ./scripts/updateChecksum.sh ${{ github.event.inputs.newVersion }}
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
     - name: Commit Changes
       uses: stefanzweifel/git-auto-commit-action@v4
+      tagging_message: 'v${{ github.event.inputs.newVersion }}'
 
     # - name: Create Pull Request
     # uses: peter-evans/create-pull-request@v5
       # with:
-      #   token: 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
+      #   token: ${{ secrets.GITHUB_TOKEN }}
       #   author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>

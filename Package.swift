@@ -44,10 +44,10 @@ let package = Package(
             .binaryTarget(name: "UIKitHelper",
                           url: "https://github.com/mansoor92/UIKitHelper/blob/master/releases/1.0.0/UIKitHelper.xcframework.zip",
                           checksum: "403412780924a2ca357cfa03f6cb21048488a454d158d630dde7679c81d84048"),*/
-        /*
+/*
         .binaryTarget(name: "UIKitHelper",
-                      url: "https://github.com/mansoor92/UIKitHelper/blob/master/UIKitHelper-2.xcframework.zip",
-                      checksum: "f7079c235949c4781c6fc6bea9e1b169799803cf04a2e1c8880731d9c4c371e7")*/
+                      url: "http://165.22.78.207/mansoor/UIKitHelper.xcframework.zip",
+                      checksum: "ec897818ce81856e63af3b186936233107f18f7b3b161354fb9522daa7e2e56b")*/
             .binaryTarget(name: "UIKitHelper", path: "frameworks/UIKitHelper.xcframework")
     ]
 )
