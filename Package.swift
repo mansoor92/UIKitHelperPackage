@@ -3,7 +3,7 @@
 
 import PackageDescription
 
-let version = "1.8.0"
+let version = "1.0.1"
 
 let package = Package(
     name: "Sample", // this name is displayed when package is added to xcode project in Project Navigator under Package Dependencies
@@ -39,15 +39,15 @@ let package = Package(
         
         /*
             .binaryTarget(name: "CrashReporter", url: "https://eidinger.info/PLCrashReporterXCFrameworks/\(version)/CrashReporter.xcframework.zip",
-                                 checksum: "4aa868a8d68dc28c72f564c7a2123654c91da5ff1b6483fb773b97f069e831d4"),
+                                 checksum: "311837435767f964dfac8070a12e2779f4870b0e54441a763e62d6b9e6482962"),
         
             .binaryTarget(name: "UIKitHelper",
                           url: "https://github.com/mansoor92/UIKitHelper/blob/master/releases/1.0.0/UIKitHelper.xcframework.zip",
-                          checksum: "403412780924a2ca357cfa03f6cb21048488a454d158d630dde7679c81d84048"),*/
-/*
+                          checksum: "311837435767f964dfac8070a12e2779f4870b0e54441a763e62d6b9e6482962"),*/
+        /*
         .binaryTarget(name: "UIKitHelper",
-                      url: "http://165.22.78.207/mansoor/UIKitHelper.xcframework.zip",
-                      checksum: "ec897818ce81856e63af3b186936233107f18f7b3b161354fb9522daa7e2e56b")*/
+                      url: "https://github.com/mansoor92/UIKitHelper/blob/master/UIKitHelper-2.xcframework.zip",
+                      checksum: "311837435767f964dfac8070a12e2779f4870b0e54441a763e62d6b9e6482962")*/
             .binaryTarget(name: "UIKitHelper", path: "frameworks/UIKitHelper.xcframework")
     ]
 )
@@ -68,7 +68,7 @@ let package = Package(
          .binaryTarget(
              name: "LibraryA",
              url: "https://url.to/LibraryA.xcframework.zip",
-             checksum: "checksum"),
+             checksum: "311837435767f964dfac8070a12e2779f4870b0e54441a763e62d6b9e6482962"),
          .target(
              name: "PackageB",
              dependencies: [
