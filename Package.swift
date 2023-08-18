@@ -3,10 +3,10 @@
 
 import PackageDescription
 
-let version = "1.0.1"
+let version = "1.0.2"
 
 let package = Package(
-    name: "Sample", // this name is displayed when package is added to xcode project in Project Navigator under Package Dependencies
+    name: "UIKitHelperPackage", // this name is displayed when package is added to xcode project in Project Navigator under Package Dependencies
     platforms: [
         .iOS(.v16),
         .macOS(.v13)
@@ -14,11 +14,8 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "SampleProduct",
+            name: "UIKitHelper",
             targets: ["UIKitHelper"]),
-        .library(
-            name: "EmptyProduct",
-            targets: ["SamplePackage"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -35,20 +32,13 @@ let package = Package(
             .testTarget(
                 name: "SamplePackageTests",
                 dependencies: ["SamplePackage"]),
-        */
-        
-        /*
-            .binaryTarget(name: "CrashReporter", url: "https://eidinger.info/PLCrashReporterXCFrameworks/\(version)/CrashReporter.xcframework.zip",
-                                 checksum: "7af35895bacfaa1e6c6ab7ac49a6a4bb3839f59e8f70b9fb0b8f4c13e651b546"),
-        
-            .binaryTarget(name: "UIKitHelper",
-                          url: "https://github.com/mansoor92/UIKitHelper/blob/master/releases/1.0.0/UIKitHelper.xcframework.zip",
-                          checksum: "7af35895bacfaa1e6c6ab7ac49a6a4bb3839f59e8f70b9fb0b8f4c13e651b546"),*/
         
         .binaryTarget(name: "UIKitHelper",
                       url: "https://techtix.co/UIKitHelper.xcframework.zip",
                       checksum: "ec897818ce81856e63af3b186936233107f18f7b3b161354fb9522daa7e2e56b")
-           /* .binaryTarget(name: "UIKitHelper", path: "frameworks/UIKitHelper.xcframework")*/
+         */
+
+        .binaryTarget(name: "UIKitHelper", path: "frameworks/UIKitHelper.xcframework")
     ]
 )
 
@@ -68,7 +58,7 @@ let package = Package(
          .binaryTarget(
              name: "LibraryA",
              url: "https://url.to/LibraryA.xcframework.zip",
-             checksum: "7af35895bacfaa1e6c6ab7ac49a6a4bb3839f59e8f70b9fb0b8f4c13e651b546"),
+             checksum: "e281268737b5473c5c11a291a703487cc7122fd9f9a26702338780b80230a5c9"),
          .target(
              name: "PackageB",
              dependencies: [
