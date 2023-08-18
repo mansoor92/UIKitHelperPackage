@@ -14,11 +14,11 @@ jobs:
       # added or changed files to the repository.
       contents: write
     env:
-      currentTag: ${{ toJson(github.event.client_payload).tags }}
+      currentTag: ${{ github.event.client_payload.tags }}
 
     steps:
     - name: Check Payload
-      run: echo ${{ toJson(github.event.client_payload) }}
+      run: echo ${{ github.event.client_payload }}
     - name: "Check Tag"
       run: echo $currentTag
     - uses: actions/checkout@v3
