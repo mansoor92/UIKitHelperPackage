@@ -1,9 +1,9 @@
-name: Manual workflow
+name: New Release Flow
 
 on:
   repository_dispatch:
     types:
-      - new-release-trigger-event  # Same event type as defined in the sender repository
+      - new-release-event  # Same event type as defined in the sender repository
 
 jobs:
 
@@ -13,30 +13,26 @@ jobs:
       # Give the default GITHUB_TOKEN write permission to commit and push the
       # added or changed files to the repository.
       contents: write
-    env:
-      currentTag: ${{ github.event.client_payload.tags }}
 
     steps:
-    - name: Check Payload
-      run: echo ${{ github.event.client_payload }}
     - name: "Check Tag"
-      run: echo $currentTag
+      run: echo ${{ github.event.client_payload.tags }}
     - uses: actions/checkout@v3
     - name: Update Package.swift
       run: |
-        ./scripts/updateChecksum.sh $currentTag
+        ./scripts/updateChecksum.sh ${{ github.event.client_payload.tags }}
     - name: Commit Changes
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        tagging_message: 'v$currentTag'
+        tagging_message: 'v${{ github.event.client_payload.tags }}'
     - name: Create Release
       id: create_release 
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
-        tag_name: v$currentTag
-        release_name: Release v$currentTag
+        tag_name: v${{ github.event.client_payload.tags }}
+        release_name: Release v${{ github.event.client_payload.tags }}
 
     # - name: Create Pull Request
     # uses: peter-evans/create-pull-request@v5
