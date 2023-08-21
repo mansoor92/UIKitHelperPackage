@@ -25,9 +25,11 @@ curl -H "Authorization: token ${TOKEN}" https://github.com/mansoor92/UIKitHelper
 echo "UnZipping Framework"
 unzip 'UIKitHelper.xcframework.zip'
 
-echo "Moving new framework to correct folder"
+echo "Creating folder"
 mkdir -p "frameworks/$FRAMEWORK_VERSION"
-mv 'UIKitHelper.xcframework' 'frameworks/$FRAMEWORK_VERSION/UIKitHelper.xcframework'
+
+echo "Moving new framework to correct folder"
+mv "UIKitHelper.xcframework" "frameworks/$FRAMEWORK_VERSION/UIKitHelper.xcframework"
 
 # calculate new checksum
 NEW_CHECKSUM=$(swift package compute-checksum UIKitHelper.xcframework.zip)
@@ -40,4 +42,4 @@ sed -E -i '' 's/checksum: ".+"/checksum: "'$NEW_CHECKSUM\"/ Package.swift
 # print out package manifest for convenience reasons
 cat Package.swift
 # delete downloaded zip file
-rm UIKitHelper.xcframework.zip
+rm -rf UIKitHelper.xcframework.zip
