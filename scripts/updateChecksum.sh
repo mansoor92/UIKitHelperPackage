@@ -15,15 +15,19 @@ fi
 # assuming this script is executed from directory which contains Package.Swift
 # take version (e.g. 1.8.1) as argument
 NEW_VERSION=$1
+TOKEN=$2
+
 # download new zip file
 echo "Downloading Framework"
-curl -L -O https://github.com/mansoor92/UIKitHelper/blob/master/releases/$NEW_VERSION/UIKitHelper.xcframework.zip --
+# curl -L -O https://github.com/mansoor92/UIKitHelper/blob/master/releases/$NEW_VERSION/UIKitHelper.xcframework.zip --
+curl -H "Authorization: token ${TOKEN}" https://github.com/mansoor92/UIKitHelper/raw/master/releases/$NEW_VERSION/UIKitHelper.xcframework.zip --
 
 echo "UnZipping Framework"
 unzip 'UIKitHelper.xcframework.zip'
 
 echo "Moving new framework to correct folder"
-mv 'UIKitHelper.xcframework' 'frameworks/UIKitHelper.xcframework'
+mkdir -p "frameworks/$FRAMEWORK_VERSION"
+mv 'UIKitHelper.xcframework' 'frameworks/$FRAMEWORK_VERSION/UIKitHelper.xcframework'
 
 # calculate new checksum
 NEW_CHECKSUM=$(swift package compute-checksum UIKitHelper.xcframework.zip)

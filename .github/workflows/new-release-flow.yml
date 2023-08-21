@@ -1,10 +1,18 @@
 name: New Release Flow
 
-on:
-  repository_dispatch:
-    types:
-      - new-release-event  # Same event type as defined in the sender repository
+# on:
+#   repository_dispatch:
+#     types:
+#       - new-release-event  # Same event type as defined in the sender repository
 
+on:
+  workflow_dispatch:
+    inputs:
+      newVersion:
+        description: 'New Version'
+        default: '1.0.0'
+        required: true
+    
 jobs:
 
   updateBinaryTarget:
@@ -13,26 +21,32 @@ jobs:
       # Give the default GITHUB_TOKEN write permission to commit and push the
       # added or changed files to the repository.
       contents: write
+    env:
+      FRAMEWORK_VERSION: ${{ github.event.inputs.newVersion }}
+      FRAMEWORK_TAG: 'v${{ github.event.inputs.newVersion }}'
+      # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
 
     steps:
     - name: "Check Tag"
-      run: echo ${{ github.event.client_payload.tags }}
+      run: echo $FRAMEWORK_VERSION
+
     - uses: actions/checkout@v3
+
     - name: Update Package.swift
       run: |
-        ./scripts/updateChecksum.sh ${{ github.event.client_payload.tags }}
+        ./scripts/updateChecksum.sh $FRAMEWORK_VERSION ${{ secrets.UIKITHELPER_TOKEN }}
+
     - name: Commit Changes
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        tagging_message: 'v${{ github.event.client_payload.tags }}'
-    - name: Create Release
-      id: create_release 
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-      with:
-        tag_name: v${{ github.event.client_payload.tags }}
-        release_name: Release v${{ github.event.client_payload.tags }}
+        tagging_message: $FRAMEWORK_TAG
+
+    # - name: Create Release
+    #   id: create_release 
+    #   uses: actions/create-release@v1
+    #   with:
+    #     tag_name: $FRAMEWORK_TAG
+    #     release_name: Release $FRAMEWORK_TAG 
 
     # - name: Create Pull Request
     # uses: peter-evans/create-pull-request@v5
