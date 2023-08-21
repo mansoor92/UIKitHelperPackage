@@ -3,7 +3,7 @@
 
 import PackageDescription
 
-let version = "1.0.2"
+let version = "1.0.0"
 
 let package = Package(
     name: "UIKitHelperPackage", // this name is displayed when package is added to xcode project in Project Navigator under Package Dependencies
@@ -35,7 +35,7 @@ let package = Package(
         
         .binaryTarget(name: "UIKitHelper",
                       url: "https://techtix.co/UIKitHelper.xcframework.zip",
-                      checksum: "ec897818ce81856e63af3b186936233107f18f7b3b161354fb9522daa7e2e56b")
+                      checksum: "af3b522b38479fc35bbc5bc76205d841ef70fb2390d4fdffcfd853ff2bc18746")
          */
 
         .binaryTarget(name: "UIKitHelper", path: "frameworks/UIKitHelper.xcframework")
@@ -58,7 +58,7 @@ let package = Package(
          .binaryTarget(
              name: "LibraryA",
              url: "https://url.to/LibraryA.xcframework.zip",
-             checksum: "e281268737b5473c5c11a291a703487cc7122fd9f9a26702338780b80230a5c9"),
+             checksum: "af3b522b38479fc35bbc5bc76205d841ef70fb2390d4fdffcfd853ff2bc18746"),
          .target(
              name: "PackageB",
              dependencies: [
