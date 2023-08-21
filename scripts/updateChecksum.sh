@@ -19,13 +19,11 @@ NEW_VERSION=$1
 echo "Downloading Framework"
 curl -L -O https://github.com/mansoor92/UIKitHelper/blob/master/releases/$NEW_VERSION/UIKitHelper.xcframework.zip --
 
-echo "Removing existing framework file"
+echo "UnZipping Framework"
+unzip 'UIKitHelper.xcframework.zip'
 
 echo "Moving new framework to correct folder"
-mv 'current UIKitHelper.xcframework.zip' 'frameworks/UIKitHelper.xcframework.zip'
-
-echo "UnZipping Framework"
-unzip 'frameworks/UIKitHelper.xcframework.zip'
+mv 'UIKitHelper.xcframework' 'frameworks/UIKitHelper.xcframework'
 
 # calculate new checksum
 NEW_CHECKSUM=$(swift package compute-checksum UIKitHelper.xcframework.zip)
@@ -38,4 +36,4 @@ sed -E -i '' 's/checksum: ".+"/checksum: "'$NEW_CHECKSUM\"/ Package.swift
 # print out package manifest for convenience reasons
 cat Package.swift
 # delete downloaded zip file
-rm frameworks/UIKitHelper.xcframework.zip
+rm UIKitHelper.xcframework.zip
